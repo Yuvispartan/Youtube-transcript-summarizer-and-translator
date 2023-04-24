@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Digest Videos</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-5.12.1-web/css/all.min.css"
+    />
+    <!-- styles css -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='./css/styles.css') }}" />
+    <link href="../">
+  </head>
+  <body>
+    <!-- header  -->
+    <header id="home">
+      <!-- navbar -->
+      <nav class="navbar">
+        <h3>Digest Videos</h3>
+      </nav>
+      <!-- end of navbar -->
+      <!-- hero component -->
+      <div class="hero">
+        <div class="hero-banner">
+          <div class="form-group">
+            <form action="\index" method="post">
+              <label
+                class="col-form-label col-form-label-lg mt-4 video"
+                for="inputLarge"
+                >Video Link With Transcripts(With Subtitles)
+              </label>
+              <div class="underline"></div>
+              <br />
+
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Paste your link here"
+                id="inputLarge"
+                name="link"
+              />
+
+              <button type="submit" class="btn btn-danger submit">
+                Submit
+              </button>
+            </form>
+          </div>
+
+          {% if ans %}
+          <div class="answer">
+            <h4> Abstract of the given Video</h4>
+                <br>
+              <p>
+              {{ans}}
+                <br>
+                <br>
+              Trouble reading English? No worries, I got you ^_^
+                <br><br>
+                Translated content in Tamil
+                <br>
+                  {{trans1}}
+                <br><br>
+                Translated content in Hindi
+                <br>
+                  {{trans2}}
+              </p>
+          </div>
+
+    </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </header>
+    <!-- end of header  -->
+
+    <!-- footer -->
+    <footer class="section footer">
+      <p class="copyright">
+        copyright &copy; Yuvanesh J @PSGiTech
+        <span id="date"></span>. all rights reserved
+      </p>
+    </footer>
+    <!-- js -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
